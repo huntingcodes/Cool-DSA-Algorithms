@@ -1,0 +1,77 @@
+
+bool Solution::hotel(vector<int> &a, vector<int> &d, int k) {
+
+
+
+int n=a.size();
+
+vector<pair<int , int>> t;
+
+
+for(int i=0;i<n;++i )
+
+{
+
+    t.push_back({a[i],2});
+
+}
+
+
+
+for(int i=0;i<n;++i )
+
+{
+
+    t.push_back({d[i],1});
+
+}
+
+
+sort(t.begin(),t.end());
+
+
+int check=0;
+
+
+for(int i=0;i<t.size();++i)
+
+{
+
+   
+
+    if(t[i].second==2)
+
+    {
+
+        ++check;
+
+    }
+
+    else
+
+    {
+
+        --check;
+
+    }
+
+   
+
+    
+
+    if(check>k)
+
+      return false;
+
+    
+
+}
+
+
+
+return true;
+
+
+
+
+}
